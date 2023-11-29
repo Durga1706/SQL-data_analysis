@@ -52,7 +52,7 @@ SELECT LOWER('abcdefg') str_lower, UPPER('abcdefg') str_upper;
 str_lower	str_upper
 abcdefg	    ABCDEFG
 
---11. LTRIM and RTRIM
+--11. LTRIM, RTRIM and TRIM
 SELECT LTRIM(' Durga ') 'l_trim', RTRIM(' Durga ') 'r_trim', LTRIM('123abc.' , '123.') 'remove_char';        
 l_trim	r_trim  remove_char
 Durga	Durga    abc.
@@ -84,3 +84,39 @@ name	reverse_name
 Durga	agruD
 
 --17. SPACE
+SELECT RTRIM('Durga ')+ SPACE(10) +LTRIM(' Prasad');
+Durga Prasad
+
+--18. STR: STR(float_expression [ , length [ , decimal ] ]) 
+SELECT STR(185.5) num_str,STR(123.45,6,2) sixdig_2dec,STR(987.65,2,2) exceeded_specified_len, STR(987.65,3) ge_len_to_987, STR (FLOOR(123.45), 8,3) num_to_char_with_specified_format;
+num_str	sixdig_2dec	exceeds_specified_len	ge_len_to_987	num_to_char_with_specified_format
+186	        123.45	      **	                988	                    123.000
+
+--19. STUFF: STUFF( input_string , start_position , length , replace_with_substring )
+SELECT 
+    STUFF('SQL Tutorial', 1 , 3, 'SQL Server') result,
+    STUFF('1230', 3, 0, ':') AS formatted_time,
+    STUFF(STUFF('03102019', 3, 0, '/'), 6, 0, '/') formatted_date,
+    STUFF('48825842', 1, LEN('48825842') - 4, REPLICATE('X', LEN('48825842') - 4)) mask_atm_num;
+result	            formatted_time	formatted_date	mask_atm_num
+SQL Server Tutorial	  12:30	           03/10/2019	  XXXX5842
+
+--20. SUBSTRING: SUBSTRING ( expression, start, length )
+SELECT 'master' str, second_word= SUBSTRING('abcdef',2,1), SUBSTRING('master', 3, 2) third_fourth_words;
+str	   second_word	third_fourth_words
+master	   b	            st
+
+--21. TRANSLATE: TRANSLATE(inputString, characters, translations)
+SELECT TRANSLATE('2*[3+4]/{7-2}', '[]{}', '()()') formula, TRANSLATE('[137.4,72.3]' , '[,]', '( )') Point,TRANSLATE('(137.4 72.3)' , '( )', '[,]') Coordinates, 
+       TRANSLATE('abcde','aeiou','AEIOU') trasnlated_text,REPLACE('abcde','a','A') replaced_text1, REPLACE('abcde','aeiou','AEIOU') replaced_text2;
+formula	            Point	    Coordinates	    trasnlated_text	 replaced_text1   replaced_text2
+2*(3+4)/(7-2)	(137.4 72.3)	[137.4,72.3]	  AbcdE	            Abcde	        abcde
+
+--STRING_SPLIT: STRING_SPLIT ( string , separator [ , enable_ordinal ] )
+   -- reference: https://www.sqlservertutorial.net/sql-server-string-functions/sql-server-string_split-function/
+
+--STRING_AGG: STRING_AGG ( expression, separator ) [ <order_clause> ]
+    -- reference: https://www.tutorialspoint.com/sql/sql-string-functions-string-agg.htm
+
+        
+

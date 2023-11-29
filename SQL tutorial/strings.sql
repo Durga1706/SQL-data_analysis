@@ -58,3 +58,29 @@ l_trim	r_trim  remove_char
 Durga	Durga    abc.
 
 --12. PATINDEX: Returns the starting position of the first occurrence of a pattern
+SELECT position = PATINDEX('%ter%', 'interesting data'), wildcard_pattern= PATINDEX('%en_ure%', 'Please ensure the door is locked!'), no_alphanumeric_position = PATINDEX('%[^ 0-9A-Za-z]%', 'Please ensure the door is locked!'), 
+specified_var_pattern= PATINDEX('%' + 'ensure' + '%', 'Please ensure the door is locked!');
+position	wildcard_pattern	no_alphanumeric_position	specified_var_pattern
+3	            8	                    33	                            8
+
+--13. REPLACE
+SELECT REPLACE('abcdefghicde','cde','xxx') x_replace, REPLACE('ABC ABC ABC', 'a', 'c') c_replace,REPLACE('ABc ABc ABC', 'c', 'd') d_replace, space_count=len('This is a sentence with spaces in it.')-len(replace('This is a sentence with spaces in it.',' ',''));  
+x_replace	    c_replace	 d_replace	  space_count
+abxxxfghixxx	cBC cBC cBC	 ABd ABd ABd	  7
+
+--14. DATALENGTH: 
+select 'Sharma' orginal_str, DATALENGTH('Sharma') str_len;
+orginal_str	 str_len
+Sharma         6
+
+--15. REPLICATE: Repeats a string value a specified number of times
+SELECT REPLICATE('abc ',2) two_times, REPLICATE('1',8- DATALENGTH(' abc ')) len_times,REPLICATE('1',8- DATALENGTH(' abc ')) + 5 'len_replicate1', REPLICATE('1',8- DATALENGTH(' abc ')) + 9 'len_replicate2';  
+two_times	len_times	len_replicate1	len_replicate2
+abc abc	     111	         116	        120
+
+--16. REVERSE
+SELECT 'Durga' name, REVERSE('Durga') reverse_name;
+name	reverse_name
+Durga	agruD
+
+--17. SPACE

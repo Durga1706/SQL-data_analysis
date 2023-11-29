@@ -19,7 +19,42 @@ SELECT 'Happy' + ' Birthday' wish, CONCAT('Happy', 'Birthday') Res1, CONCAT('Hap
 wish               Res1	              Res2
 Happy Birthday   HappyBirthday	    Happy Birthday   
 
---5. CONCAT_WS - concate with separator
+--5. CONCAT_WS: concate with separator
 SELECT CONCAT_WS(', ', '1 Microsoft Way','Redmond', 'WA', 98052) Address, CONCAT_WS(':',')',')') mood;
 Address	                                mood
 1 Microsoft Way, Redmond, WA, 98052  	  ):)
+
+--6. DIFFERENCE: compares two strings using Soundex and returns a similarity scale from 0 to 4
+SELECT DIFFERENCE('Juice', 'Jucy') strong_sim, DIFFERENCE('Juice', 'Banana') med_simi, DIFFERENCE('Apple','pink') weak_sim;
+strong_sim	med_simi	weak_sim
+    4	        2	        1
+
+-- 7. SOUNDEX: converts the string to a four-character code based on how the string sounds when spoken
+SELECT SOUNDEX('Juice') s1, SOUNDEX('Jucy') s2, DIFFERENCE('Juice', 'Jucy') d1, SOUNDEX('Juice') s3, SOUNDEX('Banana') s4,DIFFERENCE('Juice', 'Banana') d2;
+s1	     s2	    d1	 s3	    s4	   d2
+J200	J200	4	J200	B550	2
+
+--8. FORMAT
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy', 'en-US' ) 'US_Date', FORMAT(GETDATE(), 'dd/MM/yyyy', 'de-de' ) 'Germa_Date', FORMAT(SYSDATETIME(), N'hh:mm tt') 'time',
+       FORMAT(CAST('2018-01-01 01:00' AS datetime2), N'hh:mm tt') 'am_time', FORMAT(CAST('2018-01-01 14:00' AS datetime2), N'HH:mm') '24_time',
+       FORMAT(123456789,'###-##-####') 'Custom Number', FORMAT(1.4683, 'N', 'en-us')'Numeric Format', FORMAT(1.4683, 'G', 'en-us') 'General Format',
+       FORMAT(1.4683, 'C', 'en-us') 'Currency Format';
+US_Date	    Germa_Date	 time	     am_time	24_time	 Custom Number	  Numeric Format	General Format	Currency Format
+29/11/2023	29.11.2023	06:50 AM	01:00 AM	14:00	123-45-6789	          1.47	           1.4683	         $1.47
+
+--9. LEN, LEFT and RIGHT
+SELECT LEN('abcdefg') str_len, LEFT('abcdefg',2) left_2_str,RIGHT('abcdefg',2) right_2_str;
+str_len left_2_str	right_2_str
+ 7         ab	       fg
+
+--10. LOWER and UPPER
+SELECT LOWER('abcdefg') str_lower, UPPER('abcdefg') str_upper;
+str_lower	str_upper
+abcdefg	    ABCDEFG
+
+--11. LTRIM and RTRIM
+SELECT LTRIM(' Durga ') 'l_trim', RTRIM(' Durga ') 'r_trim', LTRIM('123abc.' , '123.') 'remove_char';        
+l_trim	r_trim  remove_char
+Durga	Durga    abc.
+
+--12. PATINDEX: Returns the starting position of the first occurrence of a pattern

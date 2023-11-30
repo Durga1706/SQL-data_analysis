@@ -1,0 +1,2 @@
+-- https://dotnettutorials.net/lesson/sql-server-stored-procedure/
+-- https://www.sqlservertutorial.net/sql-server-stored-procedures/basic-sql-server-stored-procedures/

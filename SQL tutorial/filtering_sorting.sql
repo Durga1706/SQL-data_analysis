@@ -9,6 +9,12 @@
     * wildcards
     https://d3c33hcgiwev3.cloudfront.net/_5b62ac24aa1b72bfef6a44c0d0eafb09_Using-Wildcards-in-SQL.pdf?Expires=1702339200&Signature=ULWe0pDnUJXfq7Lh~Z0HhhGEigWFUVK-
     hLghs25RPdBXar02Oe4mYkc3OnnxHw2qQUGirUEEY72l-CO3t1-TwOO5xwkz-QI9JP20E5msf87Mml9CpGZx7fucPK2IqqdmbdLJDp1HoRC6hQyMn5kOmGsylCb~jNW0yKKxdhK6I8k_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+*/
 
-    *
+/* Ordering
+     * order by
+     https://d3c33hcgiwev3.cloudfront.net/_efe8faebfcc1f2db61064927ea2c29dc_Sorting-with-ORDER-BY.pdf?Expires=1702339200&Signature=WMhabvfEzkSSrSsrfRNvEh44JQQn8aOT8Jiz3IpxqEL
+     fatQtlR5MweGBP4WU8ZIIL~qAw6rivJZusnSL1C1REM8IVzeby8sRV78mb-qtkShoH5py2-GfV2M~HC83Jp-pkPB0-TnI5qM-aSOIxrSGqR1AerSCdHSAu4wdX53krmE_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+
+     * 
 */

@@ -1,3 +1,10 @@
+/* pdf: https://d3c33hcgiwev3.cloudfront.net/_2b6e63ad88b510f8fa14637ebb12b3d9_Using-Subqueries.pdf?Expires=1702512000&Signature=XICnbCx8H6cJUKFvANetzTO0gb0~
+        5Zd9ueVzFyz2CciyjvPBhS0ca9a0mgW6Ldiw14XobJvWgACWy32ZYBv8IvGOxs6tLR7JE9P9RAN0H98YOJmoLGm0dOFIbNVIJQjxDe1QFFEbAQAoq4r76S0oL3MJ4EHz-TEDJc2MYD7zZHI_&Key-Pair-
+        Id=APKAJLTNE6QMUY6HBC5A
+        https://d3c33hcgiwev3.cloudfront.net/_80462ee9a1ab3649ad8a01efbe279206_Subquery-Best-Practices-and-Considerations.pdf?Expires=1702512000&Signature=
+        ZEW0lA3YvsrZvj-Bvvwy4lnv9Np6RZ1uakMCSAuxPRiCL2~-ZExQ6ZkglFn~oaxIzewCJoA081rzxrGRulJ7lag-syEk2lhMRnlTJIWb3iWY5niLes9BcFg8~ramRdI2AGiRid5NvjU71G9lkeMF1QSwV4v
+        -oMe8UoHEZgRCduE_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+*/
 /* Sub-queries are queries within another query.  The result of the inner sub-query is fed to the outer query, which uses that to produce its outcome.
     SELECT column_name  -- main / outer query
     FROM table_name WHERE column_name expression operator   

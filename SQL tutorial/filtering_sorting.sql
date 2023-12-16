@@ -18,3 +18,46 @@
 
      * 
 */
+
+-- GROPU BY
+
+
+-- HAVING
+
+-- ORDER BY
+CREATE TABLE employee( 
+  id INT PRIMARY KEY,
+  f_name VARCHAR(50), l_name VARCHAR(50),
+  dept varchar(10)
+  );
+  insert into employee values(1,"John","Smith","HR"), (2,"Jane","Doe","Finance"), (3,"Michael","Tylor","IT"), 
+  (4,"Emily","Roberts","Finance");
+  
+  -- order by multiple columns
+SELECT * FROM Employee ORDER BY dept DESC, l_name;
+
+-- sort by department then by id (highest to lowest)
+select * from employee order by dept, id desc;
+
+-- add columns phone and city to employye table
+alter table employee add phone int, add city varchar(10);
+
+select * from employee;
+insert into employee values(5,"Hansen","Ola", "HR",123,"Sandnes"),
+(6,"Peter","son","IT", 159,"Stavanger");
+
+SET SQL_SAFE_UPDATES=0; -- safe updates disable
+-- update employee set phone=147, city="Sandnes" WHERE phone IS NULL OR city IS NULL; /* If I use this it will add to all the previous records */
+-- random data generate for the previous records
+UPDATE employee
+SET phone = LPAD(FLOOR(RAND() * 1000), 3, '1'),
+    city = CASE WHEN RAND() > 0.5 THEN 'Albany' ELSE 'Amarillo' END
+WHERE id between 1 and 4;
+
+UPDATE employee
+SET city = 'Amarillo' 
+WHERE id between 3 and 4;
+
+select * from employee where city="Albany" order by id; -- with WHERE
+select f_name, l_name from employee order by city; -- column that is not in the select list
+select f_name, l_name from employee order by LENGTH(f_name) desc; -- large f_name

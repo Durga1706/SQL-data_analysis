@@ -1,4 +1,5 @@
 -- cheat sheet: https://learnsql.com/blog/sql-window-functions-cheat-sheet/
+-- group by vs partition by: https://learnsql.com/blog/difference-between-group-by-partition-by/
 
 /*
  cats must be ordered by name and will enter an elevator one by one. We would like to know what the running total weight is.

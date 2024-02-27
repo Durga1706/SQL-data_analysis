@@ -44,3 +44,11 @@ select * from student where dep_id= (SELECT id from department WHERE name = 'Com
 -- correlated example
 	-- all the students with age greater than average age within their department
 SELECT name, gender, age FROM student s1 WHERE s1.age> (SELECT AVG (s2.age) FROM student s2 WHERE s2.dep_id = s1.dep_id) ;
+
+
+
+-- subqueries as joins:- database star
+select prod_name from product where prod_category_id in (select category_id from category where category_status='active');
+
+-- is same as
+select p.prod_name from product p join category c on p.id=c.category_id where c.category_status='active';
